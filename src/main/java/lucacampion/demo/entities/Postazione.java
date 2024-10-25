@@ -19,9 +19,6 @@ public class Postazione {
     @Column(name = "numero massimo partecipanti", nullable = false)
     private int numeroMaxPartecipanti;
 
-    @Column(name = "stato", nullable = false)
-    private StatoOccupazionale statoOccupazionale;
-
     // un edificio può contenere diverse postazioni, MANY
     // una postazione si trova dentro un solo edificio, ONE
     @ManyToOne
@@ -32,11 +29,10 @@ public class Postazione {
     public Postazione() {}
 
     // costruttore
-    public Postazione(String descrizione, Edificio edificio, int numeroMaxPartecipanti, StatoOccupazionale statoOccupazionale, TipologiaPostazione tipologiaPostazione) {
+    public Postazione(String descrizione, Edificio edificio, int numeroMaxPartecipanti, TipologiaPostazione tipologiaPostazione) {
         this.descrizione = descrizione;
         this.edificio = edificio;
         this.numeroMaxPartecipanti = numeroMaxPartecipanti;
-        this.statoOccupazionale = statoOccupazionale;
         this.tipologiaPostazione = tipologiaPostazione;
     }
 
@@ -74,14 +70,6 @@ public class Postazione {
         this.numeroMaxPartecipanti = numeroMaxPartecipanti;
     }
 
-    public StatoOccupazionale getStatoOccupazionale() {
-        return statoOccupazionale;
-    }
-
-    public void setStatoOccupazionale(StatoOccupazionale statoOccupazionale) {
-        this.statoOccupazionale = statoOccupazionale;
-    }
-
     public TipologiaPostazione getTipologiaPostazione() {
         return tipologiaPostazione;
     }
@@ -89,7 +77,6 @@ public class Postazione {
     public void setTipologiaPostazione(TipologiaPostazione tipologiaPostazione) {
         this.tipologiaPostazione = tipologiaPostazione;
     }
-
 
     // to string
     @Override
@@ -99,7 +86,6 @@ public class Postazione {
                 ", id=" + id +
                 ", tipologiaPostazione=" + tipologiaPostazione +
                 ", numeroMaxPartecipanti=" + numeroMaxPartecipanti +
-                ", statoOccupazionale=" + statoOccupazionale +
                 ", edificio=" + edificio +
                 '}';
     }

@@ -10,7 +10,7 @@ public class Prenotazione {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private LocalDate localDate;
+    private LocalDate dataPrenotazione;
 
     // una prenotazione riguarda una unica postazione, ONE
     // ma una postazione può avere più prenotazioni, MANY
@@ -29,27 +29,27 @@ public class Prenotazione {
 
     // costruttore
     public Prenotazione(LocalDate localDate, Postazione postazione, Utente utente) {
-        this.localDate = localDate;
+        this.dataPrenotazione = localDate;
         this.postazione = postazione;
         this.utente = utente;
     }
 
 
     // getter e setter
+    public LocalDate getDataPrenotazione() {
+        return dataPrenotazione;
+    }
+
+    public void setDataPrenotazione(LocalDate dataPrenotazione) {
+        this.dataPrenotazione = dataPrenotazione;
+    }
+
     public long getId() {
         return id;
     }
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public LocalDate getLocalDate() {
-        return localDate;
-    }
-
-    public void setLocalDate(LocalDate localDate) {
-        this.localDate = localDate;
     }
 
     public Postazione getPostazione() {
@@ -68,13 +68,12 @@ public class Prenotazione {
         this.utente = utente;
     }
 
-
     // to string
     @Override
     public String toString() {
         return "Prenotazione{" +
-                "id=" + id +
-                ", localDate=" + localDate +
+                "dataPrenotazione=" + dataPrenotazione +
+                ", id=" + id +
                 ", postazione=" + postazione +
                 ", utente=" + utente +
                 '}';
