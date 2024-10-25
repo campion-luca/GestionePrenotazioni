@@ -27,7 +27,7 @@ public class PostazioneService {
         return postazioneRepository.findById(id).orElseThrow(() -> new NotFoundException(id));
     }
 
-    public List<Postazione> findByTipo (TipologiaPostazione tipologiaPostazione) {
-        return postazioneRepository.findByTipoPostazioneAndEdificio_Citta(tipologiaPostazione, postazioneReposit);
+    public List<Postazione> findByTipo (TipologiaPostazione tipologiaPostazione, String citta) {
+        return postazioneRepository.findByTipoPostazioneAndEdificio_Citta(tipologiaPostazione, citta);
     }
 }
