@@ -12,6 +12,6 @@ public interface PostazioneRepository extends JpaRepository<Postazione, Long> {
     boolean existsByDescrizione(String descrizione);
 
 
-    // ricerca tramite tipologia postazione
-    List<Postazione> findByTipologiaPostazione(TipologiaPostazione tipologiaPostazione);
+    // ricerca tramite tipologia postazione e città
+    List<Postazione> findByTipoPostazioneAndEdificio_Citta(TipologiaPostazione tipologiaPostazione, String citta);
 }

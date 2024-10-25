@@ -28,6 +28,6 @@ public class PostazioneService {
     }
 
     public List<Postazione> findByTipo (TipologiaPostazione tipologiaPostazione) {
-        return postazioneRepository.findByTipologiaPostazione(tipologiaPostazione);
+        return postazioneRepository.findByTipoPostazioneAndEdificio_Citta(tipologiaPostazione, postazioneReposit);
     }
 }
