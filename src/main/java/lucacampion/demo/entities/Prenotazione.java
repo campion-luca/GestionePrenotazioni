@@ -25,6 +25,7 @@ public class Prenotazione {
     private Utente utente;
 
 
+    public Prenotazione() {}
 
     // costruttore
     public Prenotazione(LocalDate localDate, Postazione postazione, Utente utente) {

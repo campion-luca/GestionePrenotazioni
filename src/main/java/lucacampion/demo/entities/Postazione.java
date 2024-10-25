@@ -29,6 +29,7 @@ public class Postazione {
     private Edificio edificio;
 
 
+    public Postazione() {}
 
     // costruttore
     public Postazione(String descrizione, Edificio edificio, int numeroMaxPartecipanti, StatoOccupazionale statoOccupazionale, TipologiaPostazione tipologiaPostazione) {

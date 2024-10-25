@@ -5,5 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PostazioneRepository extends JpaRepository<Postazione, Long> {
 
+    // controllo duplicato
+    boolean existsByDescrizione(String descrizione);
 
 }

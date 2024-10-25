@@ -20,6 +20,8 @@ public class Utente {
     private String email;
 
 
+    public Utente() {}
+
     // costruttore
     public Utente(String email, String nomeCompleto, String username) {
         this.email = email;

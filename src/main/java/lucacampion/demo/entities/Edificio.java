@@ -2,8 +2,6 @@ package lucacampion.demo.entities;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 public class Edificio {
     @Id
@@ -20,7 +18,7 @@ public class Edificio {
     private String citta;
 
 
-
+    public Edificio() {}
 
     // costruttore
     public Edificio(String citta, String indirizzo, String nome) {
@@ -63,7 +61,6 @@ public class Edificio {
         this.nome = nome;
     }
 
-
     // to string
     @Override
     public String toString() {
@@ -74,4 +71,8 @@ public class Edificio {
                 ", indirizzo='" + indirizzo + '\'' +
                 '}';
     }
+
+
 }
+
+

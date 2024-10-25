@@ -1,12 +1,15 @@
 package lucacampion.demo;
 
-import lucacampion.demo.entities.Utente;
+import lucacampion.demo.entities.*;
 import lucacampion.demo.services.EdificioService;
 import lucacampion.demo.services.PostazioneService;
 import lucacampion.demo.services.UtenteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Optional;
 
 @Component
 public class PrenotationRunner implements CommandLineRunner {
@@ -18,9 +21,9 @@ public class PrenotationRunner implements CommandLineRunner {
     private UtenteService utenteService;
 
 
+
     @Override
     public void run(String... args) throws Exception {
-
 
         // ----------------------- POPOLAMENTO DEL DB -----------------------
 // ---------- AGGIUNTA EDIFICIO -----------
@@ -34,7 +37,21 @@ public class PrenotationRunner implements CommandLineRunner {
 
 
 // ---------- AGGIUNTA POSTAZIONE -----------
-
+//        Edificio succ = edificioService.findById(1);
+//        Edificio sed = edificioService.findById(2);
+//        Edificio est1 = edificioService.findById(3);
+//        Edificio com = edificioService.findById(4);
+//
+//        Postazione p1 = new Postazione("Grande bello e luminoso", succ, 5, StatoOccupazionale.LIBERO, TipologiaPostazione.OPENSPACE);
+//        Postazione p2 = new Postazione("Piccolo ma accogliente",sed,2,StatoOccupazionale.LIBERO,TipologiaPostazione.PRIVATO);
+//        Postazione p3 = new Postazione("Grande sala perfetta per le riunioni",est1,30,StatoOccupazionale.LIBERO,TipologiaPostazione.SALA_RIUNIONI);
+//        Postazione p4 = new Postazione("Grande sala per il lavoro di gruppo",com,6,StatoOccupazionale.LIBERO,TipologiaPostazione.PRIVATO);
+//
+//
+//        postazioneService.savePostazione(p1);
+//        postazioneService.savePostazione(p2);
+//        postazioneService.savePostazione(p3);
+//        postazioneService.savePostazione(p4);
 
 
 
@@ -47,5 +64,11 @@ public class PrenotationRunner implements CommandLineRunner {
 //
 //        utenteService.saveUtente(u1);
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+
+
+
+
     }
 }
