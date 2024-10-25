@@ -94,6 +94,6 @@ public class PrenotationRunner implements CommandLineRunner {
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 
-        postazioneService.findByTipo(TipologiaPostazione.PRIVATO).forEach(System.out::println);
+        postazioneService.findByTipo(TipologiaPostazione.PRIVATO,"Roma").forEach(System.out::println);
     }
 }
