@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
+@Entity
 public class Edificio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,4 +19,59 @@ public class Edificio {
     @Column(name = "città", nullable = false)
     private String citta;
 
+
+
+
+    // costruttore
+    public Edificio(String citta, String indirizzo, String nome) {
+        this.citta = citta;
+        this.indirizzo = indirizzo;
+        this.nome = nome;
+    }
+
+
+    // getter e setter
+    public String getCitta() {
+        return citta;
+    }
+
+    public void setCitta(String citta) {
+        this.citta = citta;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getIndirizzo() {
+        return indirizzo;
+    }
+
+    public void setIndirizzo(String indirizzo) {
+        this.indirizzo = indirizzo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
+    // to string
+    @Override
+    public String toString() {
+        return "Edificio{" +
+                "citta='" + citta + '\'' +
+                ", id=" + id +
+                ", nome='" + nome + '\'' +
+                ", indirizzo='" + indirizzo + '\'' +
+                '}';
+    }
 }
