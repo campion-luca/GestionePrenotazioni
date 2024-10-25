@@ -13,7 +13,7 @@ public class Postazione {
     @Column(name="descrizione", nullable = false)
     private String descrizione;
 
-    @Column(name = "tipo di postazione", nullable = false)
+    @Column(name = "tipologiaPostazione", nullable = false)
     private TipologiaPostazione tipologiaPostazione;
 
     @Column(name = "numero massimo partecipanti", nullable = false)

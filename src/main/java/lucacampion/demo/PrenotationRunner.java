@@ -68,25 +68,32 @@ public class PrenotationRunner implements CommandLineRunner {
 //
 //        utenteService.saveUtente(u1);
 // ---------------------------------------------------------------------
+// ---------------------CREAZIONE PRENOTAZIONE + CONTROLLO PER DATA E PRENOTAZIONE GIA EFFETTUATA-------------------------
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 
-        // accedo al DB per prendermi le postazioni
-        Postazione pt1 = postazioneService.findById(1);
-        Postazione pt2 = postazioneService.findById(2);
-        Postazione pt3 = postazioneService.findById(3);
-        Postazione pt4 = postazioneService.findById(4);
-
-
-        // accedo al DB per prendermi gli utenti
-        Utente ut1 = utenteService.findById(1);
-        Utente ut2 = utenteService.findById(2);
-        Utente ut3 = utenteService.findById(3);
-        Utente ut4 = utenteService.findById(4);
-
-
-        Prenotazione p1 = new Prenotazione(LocalDate.of(2024,11,20),pt2,ut1);
+//        // accedo al DB per prendermi le postazioni
+//        Postazione pt1 = postazioneService.findById(1);
+//        Postazione pt2 = postazioneService.findById(2);
+//        Postazione pt3 = postazioneService.findById(3);
+//        Postazione pt4 = postazioneService.findById(4);
+//
+//
+//        // accedo al DB per prendermi gli utenti
+//        Utente ut1 = utenteService.findById(1);
+//        Utente ut2 = utenteService.findById(2);
+//        Utente ut3 = utenteService.findById(3);
+//        Utente ut4 = utenteService.findById(4);
+//
+//
+//        Prenotazione p1 = new Prenotazione(LocalDate.of(2024,11,20),pt2,ut1);
 
 //        prenotazioneService.savePrenotazione(p1);
+
+
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+
+        postazioneService.findByTipo(TipologiaPostazione.PRIVATO).forEach(System.out::println);
     }
 }

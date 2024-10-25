@@ -15,7 +15,7 @@ public class Prenotazione {
     // una prenotazione riguarda una unica postazione, ONE
     // ma una postazione può avere più prenotazioni, MANY
     @ManyToOne
-    @JoinColumn(name = "postazione_id")
+    @JoinColumn(name = "postazioneId")
     private Postazione postazione;
 
     // un utente può fare più prenotazioni, MANY
