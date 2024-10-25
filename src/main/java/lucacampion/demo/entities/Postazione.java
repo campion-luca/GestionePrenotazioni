@@ -28,22 +28,15 @@ public class Postazione {
     @JoinColumn(name = "edificio_id")
     private Edificio edificio;
 
-    // un utente può prenotare diverse postazioni, MANY
-    // una postazione può essere prenotata da diversi utenti, MANY
-    @ManyToMany( mappedBy = "postazione")
-    private List<Utente> utente;
-
-
 
 
     // costruttore
-    public Postazione(String descrizione, Edificio edificio, int numeroMaxPartecipanti, StatoOccupazionale statoOccupazionale, TipologiaPostazione tipologiaPostazione, List<Utente> utente) {
+    public Postazione(String descrizione, Edificio edificio, int numeroMaxPartecipanti, StatoOccupazionale statoOccupazionale, TipologiaPostazione tipologiaPostazione) {
         this.descrizione = descrizione;
         this.edificio = edificio;
         this.numeroMaxPartecipanti = numeroMaxPartecipanti;
         this.statoOccupazionale = statoOccupazionale;
         this.tipologiaPostazione = tipologiaPostazione;
-        this.utente = utente;
     }
 
 
@@ -96,14 +89,6 @@ public class Postazione {
         this.tipologiaPostazione = tipologiaPostazione;
     }
 
-    public List<Utente> getUtente() {
-        return utente;
-    }
-
-    public void setUtente(List<Utente> utente) {
-        this.utente = utente;
-    }
-
 
     // to string
     @Override
@@ -115,7 +100,6 @@ public class Postazione {
                 ", numeroMaxPartecipanti=" + numeroMaxPartecipanti +
                 ", statoOccupazionale=" + statoOccupazionale +
                 ", edificio=" + edificio +
-                ", utente=" + utente +
                 '}';
     }
 

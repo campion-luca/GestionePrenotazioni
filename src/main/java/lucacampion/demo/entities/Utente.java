@@ -19,23 +19,11 @@ public class Utente {
     @Column(name="e-mail", nullable = false)
     private String email;
 
-    // un utente può prenotare diverse postazioni, MANY
-    // una postazione può essere prenotata da diversi utenti, MANY
-    @ManyToMany
-    @JoinTable(
-            name = "postazione_utente",
-            joinColumns = @JoinColumn (name = "utente_id", nullable = false),
-            inverseJoinColumns = @JoinColumn (name = "postazione_id", nullable = false)
-    )
-    private List<Postazione> postazione;
-
-
 
     // costruttore
-    public Utente(String email, String nomeCompleto, List<Postazione> postazione, String username) {
+    public Utente(String email, String nomeCompleto, String username) {
         this.email = email;
         this.nomeCompleto = nomeCompleto;
-        this.postazione = postazione;
         this.username = username;
     }
 
@@ -64,14 +52,6 @@ public class Utente {
         this.nomeCompleto = nomeCompleto;
     }
 
-    public List<Postazione> getPostazione() {
-        return postazione;
-    }
-
-    public void setPostazione(List<Postazione> postazione) {
-        this.postazione = postazione;
-    }
-
     public String getUsername() {
         return username;
     }
@@ -88,7 +68,6 @@ public class Utente {
                 ", id=" + id +
                 ", username='" + username + '\'' +
                 ", nomeCompleto='" + nomeCompleto + '\'' +
-                ", postazione=" + postazione +
                 '}';
     }
 }

@@ -3,7 +3,9 @@ package lucacampion.demo.repositories;
 import lucacampion.demo.entities.Utente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface utenteRepository extends JpaRepository<Utente, Long> {
+public interface UtenteRepository extends JpaRepository<Utente, Long> {
 
+    // controllo duplicato
+    boolean existsById(Long id);
 
 }
